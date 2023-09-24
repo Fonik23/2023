@@ -104,13 +104,14 @@ const currentTrack = (playlistIndex) => {
         endTime.textContent = getTime(audio.duration)
         
     })
+    audio.addEventListener('timeupdate', (event) => {
+        console.log(event)
+        progressRange.value = audio.currentTime 
+        startTime.textContent = getTime(audio.currentTime)
+    })
 }
 
-audio.addEventListener('timeupdate', (event) => {
-    console.log(event)
-    progressRange.value = audio.currentTime 
-    startTime.textContent = getTime(audio.currentTime)
-})
+
 
 progressRange.addEventListener('change', () => {
     audio.currentTime = progressRange.value
