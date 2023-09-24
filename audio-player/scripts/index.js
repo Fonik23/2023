@@ -1,7 +1,7 @@
 const play = document.querySelector('.player__icon-center > .player__play')
 const pause = document.querySelector('.player__icon-center > .player__stop')
-const prev = document.querySelector('.player__prev')
-const next = document.querySelector('.player__next')
+const prev = document.querySelector('.player-prev')
+const next = document.querySelector('.player-next')
 const audio = document.querySelector('.audio')
 const nameArt = document.querySelector('.player__art')
 const nameSong = document.querySelector('.player__song')
@@ -41,7 +41,7 @@ const songFour = {
 }
 
 const playlist = [songOne, songTwo, songThree , songFour]
-
+let playlistIndex = 0
 
 //--------------------Buttons-------------
 
@@ -57,8 +57,31 @@ pause.addEventListener('click', () => {
     pause.classList.add('dn')
 })
 
+next.addEventListener('click', () => {
+    console.log('forward')
+    if(playlistIndex >= playlist.length - 1) {
+        playlistIndex = 0
+    } else {
+        playlistIndex++
+        
+    }
+    currentTrack(playlistIndex)
+    play.click()
+})
+
+prev.addEventListener('click', () => {
+    console.log('prev')
+    if(playlistIndex <= 0) {
+        playlistIndex = playlist.length - 1
+    }   else {
+        playlistIndex--
+    }
+    currentTrack(playlistIndex)
+    play.click()
+})
+
 //--------------------CurrentTrack-------------
-let playlistIndex = 0
+
 
 const getTime = (timeValue) => {
     let minutes = Math.floor(timeValue / 60)
