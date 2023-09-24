@@ -170,4 +170,24 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
+}
+.footer__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.footer__github {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+.footer__rschool {
+  display: inline-block;
+}
+.footer__img {
+  height: 100%;
+}
+.footer__year {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */

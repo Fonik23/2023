@@ -175,11 +175,24 @@ body {
     display: flex;
     align-items: center;
     &__content {
-
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
     }
-    &__github {}
-    &__rschool {}
-    &__img {}
-    &__year {}
+    &__github {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+    }
+    &__rschool {
+        display: inline-block;
+    }
+    &__img {
+        height: 100%;
+    }
+    &__year {
+        display: inline-block;
+    }
   }
   
