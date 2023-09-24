@@ -10,3 +10,111 @@ body {
     height: 100vh;
     font-family: 'Inter', sans-serif;
 }
+
+.background{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../assets/img/');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    filter: blur(10px);
+}
+
+
+.player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 270px;
+    height: 575px;
+    border-radius: 5px;
+    padding: 10px 5px;
+    background-color: aquamarine;
+    &__content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__volume {
+        width: 100%;
+        display: flex;
+        height: 25px;
+        justify-content: center;
+        gap: 0 5px;
+        & > img {
+            height: 100%;
+        }
+    }
+    &__vol--range {}
+    &__screen {
+        width: 80%;
+        height: 40%;
+        border-radius: 15px;
+        background-image: url('../assets/img/');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &__progress {}
+    &__name {
+        width: 100%;
+        margin-top: 15px;
+        text-align: center;
+        color: #434040;
+        font-weight: 700;
+    }
+    &__art {}
+    &__song {
+        margin-top: 5px;
+        font-size: 20px;
+    }
+    &__controls {
+        margin-top: 30px;
+        display: flex;
+        flex-grow: 2;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__icon-arrow {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: white;
+    }
+    &__icon-center {}
+    &__play {}
+    &__stop {}
+  }
+  .progress {
+    &__bar {}
+    &__range {}
+    &__time-box {}
+    &__start-time {}
+    &__end-time {}
+  }
+  .player-prev {
+    background-image: url('../assets/svg/left_arrow.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .player-next {
+    background-image: url('../assets/svg/right_arrow.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .footer {
+    &__github {}
+    &__rschool {}
+    &__img {}
+    &__year {}
+  }
+  
