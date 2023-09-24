@@ -7,6 +7,11 @@ const nameArt = document.querySelector('.player__art')
 const nameSong = document.querySelector('.player__song')
 const screenPlayer = document.querySelector('.player__screen')
 const background = document.querySelector('.background')
+const progressRange = document.querySelector('.progress__range')
+const startTime = document.querySelector('.progress__start-time')
+const endTime = document.querySelector('.progress__end-time')
+
+
 
 
 //--------------------Playlist-------------
@@ -56,12 +61,27 @@ pause.addEventListener('click', () => {
 //--------------------CurrentTrack-------------
 let playlistIndex = 0
 
+const getTime = (timeValue) => {
+    let minutes = Math.floor(timeValue / 60)
+    let seconds = Math.floor(timeValue % 60)
+    if(seconds < 10){
+        seconds = `0${seconds}`
+    }
+    return `${minutes}:${seconds}`
+}
+
 const currentTrack = (playlistIndex) => {
     let track = playlist[playlistIndex]
     nameArt.textContent = track.name
     nameSong.textContent = track.songName
     screenPlayer.style.backgroundImage = `url('${track.cover}')`
     background.style.backgroundImage = `url('${track.cover}')`
+
+    audio.addEventListener('loadeddata', () => {
+        progressRange.max = audio.duration
+        endTime.textContent = getTime(audio.duration)
+        
+    })
 }
 
 currentTrack(playlistIndex)
