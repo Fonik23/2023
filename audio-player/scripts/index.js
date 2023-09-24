@@ -3,20 +3,13 @@ const pause = document.querySelector('.player__icon-center > .player__stop')
 const prev = document.querySelector('.player__prev')
 const next = document.querySelector('.player__next')
 const audio = document.querySelector('.audio')
+const nameArt = document.querySelector('.player__art')
+const nameSong = document.querySelector('.player__song')
+const screenPlayer = document.querySelector('.player__screen')
+const background = document.querySelector('.background')
 
-play.addEventListener('click', () => {
-    console.log('a')
-    audio.play()
-    play.classList.add('dn')
-    pause.classList.remove('dn')
-})
 
-pause.addEventListener('click', () => {
-    audio.pause()
-    play.classList.remove('dn')
-    pause.classList.add('dn')
-})
-
+//--------------------Playlist-------------
 const songOne = {
     name: 'Lofi Fruits Music',
     songName: 'Stan',
@@ -43,3 +36,32 @@ const songFour = {
 }
 
 const playlist = [songOne, songTwo, songThree , songFour]
+
+
+//--------------------Buttons-------------
+
+play.addEventListener('click', () => {
+    console.log('a')
+    audio.play()
+    play.classList.add('dn')
+    pause.classList.remove('dn')
+})
+
+pause.addEventListener('click', () => {
+    audio.pause()
+    play.classList.remove('dn')
+    pause.classList.add('dn')
+})
+
+//--------------------CurrentTrack-------------
+let playlistIndex = 0
+
+const currentTrack = (playlistIndex) => {
+    let track = playlist[playlistIndex]
+    nameArt.textContent = track.name
+    nameSong.textContent = track.songName
+    screenPlayer.style.backgroundImage = `url('${track.cover}')`
+    background.style.backgroundImage = `url('${track.cover}')`
+}
+
+currentTrack(playlistIndex)
