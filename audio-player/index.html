@@ -7,7 +7,46 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    
+    <div class="background"></div>
+    <div class="player">
+        <div class="player__content">
+            <div class="player__volume">
+                <img src="./assets/svg/" alt="minvol">
+                <input type="range" name="volume" class="player__vol--range" value="70" min="0" max="100" step="10">
+                <img src="./assets/svg/" alt="fullvol">
+            </div>
+            <div class="player__screen"></div>
+            <div class="player__progress progress">
+                <div class="progress__bar">
+                    <input type="range" name="bar" class="progress__range" value="0">
+                </div>
+                <div class="progress__time-box">
+                    <div class="progress__start-time"><span>0:00</span></div>
+                    <div class="progress__end-time"><span>3:15</span></div>
+                </div>
+            </div>
+            <div class="player__name">
+                <p class="player__art">Artist</p>
+                <p class="player__song">Name Song</p>
+            </div>
+            <div class="player__controls">
+                <div class="player__icon-arrow player-prev">
+                    <img src="./assets/svg/" alt="left-arrow">
+                </div>
+                <div class="player__icon-center">
+                    <img src="./assets/svg/" alt="play" class="player__play">
+                    <img src="./assets/svg/" alt="pause" class="player__stop">
+                </div>
+                <div class="player__icon-arrow player-next"><img src="./assets/svg/" alt="right-arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <a href="https://github.com/Fonik23" class="footer__github" target="_blank">Fonik23</a>
+        <a href="https://rs.school/js-stage0/" class="footer__rschool" target="_blank"><img  class="footer__img" src="./assets/svg/" alt="rs-school"></a>
+        <span class="footer__year">2023</span>
+    </footer>
     <script src="./scripts/index.js" ></script>
 </body>
 </html>
