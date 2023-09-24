@@ -98,7 +98,7 @@ const currentTrack = (playlistIndex) => {
     nameSong.textContent = track.songName
     screenPlayer.style.backgroundImage = `url('${track.cover}')`
     background.style.backgroundImage = `url('${track.cover}')`
-
+    audio.src = track.trackPath
     audio.addEventListener('loadeddata', () => {
         progressRange.max = audio.duration
         endTime.textContent = getTime(audio.duration)
