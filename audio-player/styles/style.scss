@@ -131,7 +131,7 @@ body {
         outline: none;
         overflow: hidden;
         &::-webkit-slider-runnable-track{
-            height: 5px;
+            height: 10px;
             background-color: #434040;
         }
         &::-webkit-slider-thumb{

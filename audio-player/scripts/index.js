@@ -46,7 +46,6 @@ const playlist = [songOne, songTwo, songThree , songFour]
 //--------------------Buttons-------------
 
 play.addEventListener('click', () => {
-    console.log('a')
     audio.play()
     play.classList.add('dn')
     pause.classList.remove('dn')
@@ -83,5 +82,16 @@ const currentTrack = (playlistIndex) => {
         
     })
 }
+
+audio.addEventListener('timeupdate', (event) => {
+    console.log(event)
+    progressRange.value = audio.currentTime 
+    startTime.textContent = getTime(audio.currentTime)
+})
+
+progressRange.addEventListener('change', () => {
+    audio.currentTime = progressRange.value
+})
+
 
 currentTrack(playlistIndex)

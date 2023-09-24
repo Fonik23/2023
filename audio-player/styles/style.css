@@ -129,7 +129,7 @@ body {
   overflow: hidden;
 }
 .progress__range::-webkit-slider-runnable-track {
-  height: 5px;
+  height: 10px;
   background-color: #434040;
 }
 .progress__range::-webkit-slider-thumb {
