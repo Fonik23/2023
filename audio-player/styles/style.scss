@@ -88,14 +88,66 @@ body {
         border-radius: 50%;
         background-color: white;
     }
-    &__icon-center {}
-    &__play {}
-    &__stop {}
+    &__icon-center {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+    }
+    &__play {
+        position: absolute;
+        top: 25%;
+        left: 32%;
+        height: 50%;
+    }
+    &__stop.dn {
+        display: none;
+    }
+    &__stop{
+        height: 50%;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+
   }
   .progress {
-    &__bar {}
-    &__range {}
-    &__time-box {}
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__bar {
+        width: 80%;
+    }
+    &__range {
+        width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        overflow: hidden;
+        &::-webkit-slider-runnable-track{
+            height: 5px;
+            background-color: #434040;
+        }
+        &::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 10px;
+            background-color: white;
+            box-shadow: -300px 0 0 300px blue;
+        }
+    }
+    &__time-box {
+        margin-top: 5px;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #434040;
+    }
     &__start-time {}
     &__end-time {}
   }
@@ -112,6 +164,19 @@ body {
     background-position: center;
   }
   .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &__content {
+
+    }
     &__github {}
     &__rschool {}
     &__img {}
