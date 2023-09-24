@@ -101,6 +101,9 @@ body {
         left: 32%;
         height: 50%;
     }
+    &__play.dn{
+        display: none;
+    }
     &__stop.dn {
         display: none;
     }

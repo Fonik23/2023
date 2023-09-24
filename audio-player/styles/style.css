@@ -97,6 +97,9 @@ body {
   left: 32%;
   height: 50%;
 }
+.player__play.dn {
+  display: none;
+}
 .player__stop.dn {
   display: none;
 }
