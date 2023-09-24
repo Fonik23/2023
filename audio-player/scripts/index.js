@@ -10,7 +10,7 @@ const background = document.querySelector('.background')
 const progressRange = document.querySelector('.progress__range')
 const startTime = document.querySelector('.progress__start-time')
 const endTime = document.querySelector('.progress__end-time')
-
+const volumeRange = document.querySelector('.player__vol-range')
 
 
 
@@ -114,6 +114,17 @@ audio.addEventListener('timeupdate', (event) => {
 
 progressRange.addEventListener('change', () => {
     audio.currentTime = progressRange.value
+})
+
+//--------------------Volume-------------
+
+volumeRange.addEventListener('change', () => {
+    if(volumeRange.value === 0){
+        audio.volume = 0
+    }   else {
+        audio.volume = volumeRange.value / 100
+    }
+    
 })
 
 
