@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 10%;
+    display: flex;
+    padding: 5px 15px;
+    justify-content: end;
+    background-color: orange;
+    align-items: center;
+    &__input {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        & > input {
+            display: inline-block;
+            height: 45%;
+            border-radius: 15px;
+            outline-style: 2px solid orange;
+            border-style: 2px solid orange;
+            padding: 5px 10px ;
+            font-size: 1rem;
+            &::placeholder{
+                padding: 0 5px;
+                font-size: 1rem;
+                line-height: 40px; 
+            }
+        }
+    }
+  }
+
+main{
+    flex-grow: 1;
+    background-color: darkviolet;
+}
+
+  .footer {
+    height: 10%;
+    background-color: orange;
+    &_content {
+        height: 100%;
+        display: flex;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__gh-link {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+    }
+    &__rsschool-link {
+        display: inline-block;
+        height: 50%;
+       & > img {
+        height: 50%;
+       }
+    }
+    &__year {
+        display: inline-block;
+    }
+  }
+  
