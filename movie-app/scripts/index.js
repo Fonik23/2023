@@ -15,17 +15,15 @@ async function getData (){
 getData()
 
 const startMovie = (data) => {
-    
     data.Search.forEach(element => {
         const item = document.createElement('div')
-        item.innerHTML = ` 
-        <div class="movie">
+        item.classList.add('movie')
+        item.innerHTML = `
             <div class="movie__poster" style="background-image: url('${element.Poster}');"> </div>
             <div class="movie__box">
                 <h4 class="movie__title">${element.Title}</h4>
                 <p class="movie__year">Year:<span class="movie__year-value">${element.Year}</span></p>
-            </div>
-        </div>`
+            </div>`
         movies.appendChild(item)
     
     
