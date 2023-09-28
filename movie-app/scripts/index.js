@@ -1,18 +1,18 @@
 const movies = document.querySelector('.movies')
-
 const input = document.querySelector('input')
+const form = document.querySelector('.header__form')
+const button = document.querySelector('.header__btn')
 
 const key = '6ef21418'
+const url = `https://www.omdbapi.com/?s=Star+wars&apikey=${key}`
 
-
-async function getData (){
-    const url = `https://www.omdbapi.com/?s=Star+wars&apikey=${key}`
+async function getData (url){
     const resp = await fetch(url)
     const data = await resp.json()
     console.log(data)
     startMovie(data)
 }
-getData()
+getData(url)
 
 const startMovie = (data) => {
     data.Search.forEach(element => {
@@ -31,4 +31,22 @@ const startMovie = (data) => {
 }
 
 
+
+
+button.addEventListener('click', (event) => {
+    event.preventDefault()
+    const url = `https://www.omdbapi.com/?s=${input.value}&apikey=${key}`
+    console.log(url)
+    getData(url)
+})
+
+
+input.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter'){
+        event.preventDefault()
+        const url = `https://www.omdbapi.com/?s=${input.value}&apikey=${key}`
+        console.log(url)
+        getData(url)
+    }
+})
 
