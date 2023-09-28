@@ -19,6 +19,7 @@ async function getData (url){
 getData(url)
 
 const startMovie = (data) => {
+    movies.innerHTML = ''
     data.Search.forEach(element => {
         const item = document.createElement('div')
         item.classList.add('movie')
