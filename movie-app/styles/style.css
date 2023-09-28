@@ -19,27 +19,43 @@ body {
   background-color: orange;
   align-items: center;
 }
-.header__input {
+.header__form {
+  height: 100%;
   display: flex;
   align-items: center;
   height: 100%;
 }
-.header__input > input {
+.header__form > input {
   display: inline-block;
   height: 60%;
   border-radius: 15px;
   padding: 5px 10px;
   font-size: 20px;
+  margin-right: 10px;
 }
-.header__input > input::-moz-placeholder {
+.header__form > input::-moz-placeholder {
   padding: 0 5px;
   font-size: 1rem;
   line-height: 40px;
 }
-.header__input > input::placeholder {
+.header__form > input::placeholder {
   padding: 0 5px;
   font-size: 1rem;
   line-height: 40px;
+}
+.header__btn {
+  display: inline-block;
+  height: 60%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.header__btn:hover {
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+.header__btn > img {
+  height: 100%;
 }
 
 main {

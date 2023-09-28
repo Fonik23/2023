@@ -18,7 +18,8 @@ body{
     justify-content: end;
     background-color: orange;
     align-items: center;
-    &__input {
+    &__form {
+        height: 100%;
         display: flex;
         align-items: center;
         height: 100%;
@@ -28,11 +29,26 @@ body{
             border-radius: 15px;
             padding: 5px 10px ;
             font-size: 20px;
+            margin-right: 10px;
             &::placeholder{
                 padding: 0 5px;
                 font-size: 1rem;
                 line-height: 40px; 
             }
+        }
+    }
+    &__btn{
+        display: inline-block;
+        height: 60%;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1);
+            transition: all .4s;
+        }
+        & > img{
+            height: 100%;
         }
     }
   }
