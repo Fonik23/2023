@@ -30,11 +30,25 @@ body{
             padding: 5px 10px ;
             font-size: 20px;
             margin-right: 10px;
+            border: none;
             &::placeholder{
                 padding: 0 5px;
                 font-size: 1rem;
                 line-height: 40px; 
             }
+            &::-webkit-search-cancel-button{
+                -webkit-appearance: none;
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+                background-image: url('../assets/svg/cross.svg');
+                background-position: center;
+                margin-right: 5px;   
+            }
+            &:focus{
+                outline: 5px solid rgb(140, 202, 252);
+            }
+            
         }
     }
     &__btn{
