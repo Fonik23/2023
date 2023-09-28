@@ -6,6 +6,10 @@ const button = document.querySelector('.header__btn')
 const key = '6ef21418'
 const url = `https://www.omdbapi.com/?s=Star+wars&apikey=${key}`
 
+document.addEventListener('DOMContentLoaded' , () => {
+    input.focus()
+})
+
 async function getData (url){
     const resp = await fetch(url)
     const data = await resp.json()
@@ -25,8 +29,6 @@ const startMovie = (data) => {
                 <p class="movie__year">Year:<span class="movie__year-value">${element.Year}</span></p>
             </div>`
         movies.appendChild(item)
-    
-    
     });
 }
 
