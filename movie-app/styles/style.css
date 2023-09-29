@@ -28,7 +28,6 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  height: 100%;
 }
 .header__form > input {
   display: inline-block;
