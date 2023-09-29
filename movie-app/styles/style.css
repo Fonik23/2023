@@ -125,7 +125,11 @@ main {
   justify-content: space-between;
 }
 .movie__title {
+  padding: 0 3px;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 18px;
+  text-overflow: ellipsis;
 }
 .footer {
   height: 60px;
