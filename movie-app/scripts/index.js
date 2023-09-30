@@ -20,7 +20,7 @@ async function getData (url){
 getData(url)
 
 async function getTotalResults (value) {
-    let page = 1
+    let page = 0
     while(page <= 3){
         page++
         const url = `https://www.omdbapi.com/?s=${value}&page=${page}&apikey=${key}`
@@ -97,8 +97,7 @@ form.addEventListener('submit', (event) => {
     console.log(event)
     if(input.value !== ''){
         if(btnCheck || keyboardCheck){
-            const url = `https://www.omdbapi.com/?s=${input.value}&apikey=${key}`
-            console.log(url, 'a')
+            console.log(url)
             // getData(url)
             movies.innerHTML = ''
             getTotalResults(input.value)
