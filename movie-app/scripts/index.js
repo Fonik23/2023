@@ -48,30 +48,6 @@ const startMovie = (data) => {
 }
 
 
-
-
-// button.addEventListener('click', (event) => {
-//     if(input.value !== ''){
-//         event.preventDefault()
-//         const url = `https://www.omdbapi.com/?s=${input.value}&apikey=${key}`
-//         console.log(url)
-//         getData(url)
-//     } else {
-//         alert('aaaaa')
-//     }
-    
-// })
-
-
-// input.addEventListener('keydown', (event) => {
-//     if(event.key === 'Enter'){
-//         event.preventDefault()
-//         const url = `https://www.omdbapi.com/?s=${input.value}&apikey=${key}`
-//         console.log(url)
-//         getData(url)
-//     }
-// })
-
 const btnCheck = () => {
     button.addEventListener('click', (event)=>{
         if(event.target.contains('button')){
@@ -97,8 +73,6 @@ form.addEventListener('submit', (event) => {
     console.log(event)
     if(input.value !== ''){
         if(btnCheck || keyboardCheck){
-            console.log(url)
-            // getData(url)
             movies.innerHTML = ''
             getTotalResults(input.value)
         }
