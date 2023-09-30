@@ -4,12 +4,21 @@ const form = document.querySelector('.header__form')
 const button = document.querySelector('.header__btn')
 
 const key = '6ef21418'
-const url = `https://www.omdbapi.com/?s=Star+wars&page=1&apikey=${key}`
-console.log(url)
+
+
+
 document.addEventListener('DOMContentLoaded' , () => {
     input.focus()
 })
+const getRandomMovie = () => {
+    const startMovie = ['Star Wars', 'Lord of the Ring', 'Mission impossible', 'Die hard', 'Terminator']
+    const randomIndex = Math.floor(Math.random() * 5)
+    console.log(startMovie[randomIndex])
+    return startMovie[randomIndex]
+}
 
+const url = `https://www.omdbapi.com/?s=${getRandomMovie()}&page=1&apikey=${key}`
+console.log(url)
 async function getData (url){
     const resp = await fetch(url)
     const data = await resp.json()
