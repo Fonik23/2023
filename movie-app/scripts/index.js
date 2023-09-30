@@ -13,20 +13,18 @@ document.addEventListener('DOMContentLoaded' , () => {
 const getRandomMovie = () => {
     const startMovie = ['Star Wars', 'Lord of the Ring', 'Mission impossible', 'Die hard', 'Terminator']
     const randomIndex = Math.floor(Math.random() * 5)
-    console.log(startMovie[randomIndex])
     return startMovie[randomIndex]
 }
 
-const url = `https://www.omdbapi.com/?s=${getRandomMovie()}&page=1&apikey=${key}`
-console.log(url)
+const startUrl = `https://www.omdbapi.com/?s=${getRandomMovie()}&page=1&apikey=${key}`
+
 async function getData (url){
-    const resp = await fetch(url)
-    const data = await resp.json()
-    movies.innerHTML = ''
-    console.log(data)
-    startMovie(data)
+        const resp = await fetch(url)
+        const data = await resp.json()
+        movies.innerHTML = ''
+        startMovie(data)
 }
-getData(url)
+getData(startUrl)
 
 async function getTotalResults (value) {
     let page = 0
@@ -36,24 +34,29 @@ async function getTotalResults (value) {
         const res = await fetch(url)
         const data = await res.json()
         startMovie(data)
+        if(data.totalResults < 11){
+            return page = 3
+        }
     }
     
     return getTotalResults
 }
 
-
 const startMovie = (data) => {
-    data.Search.forEach(element => {
-        const item = document.createElement('div')
-        item.classList.add('movie')
-        item.innerHTML = `
-            <div class="movie__poster" style="background-image: url('${element.Poster}');"> </div>
-            <div class="movie__box">
-                <h4 class="movie__title">${element.Title}</h4>
-                <p class="movie__year">Year:<span class="movie__year-value">${element.Year}</span></p>
-            </div>`
-        movies.appendChild(item)
-    });
+        data.Search.forEach(element => {
+            if(element.Poster === 'N/A'){
+                element.Poster = `./assets/img/no_image.png`
+            }
+            const item = document.createElement('div')
+            item.classList.add('movie')
+            item.innerHTML = `
+                <div class="movie__poster" style="background-image: url('${element.Poster}');"> </div>
+                <div class="movie__box">
+                    <h4 class="movie__title">${element.Title}</h4>
+                    <p class="movie__year">Year:<span class="movie__year-value">${element.Year}</span></p>
+                </div>`
+            movies.appendChild(item)
+        });
 }
 
 
@@ -79,7 +82,6 @@ const keyboardCheck = () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    console.log(event)
     if(input.value !== ''){
         if(btnCheck || keyboardCheck){
             movies.innerHTML = ''
