@@ -33,16 +33,19 @@ async function getTotalResults (value) {
         const url = `https://www.omdbapi.com/?s=${value}&page=${page}&apikey=${key}`
         const res = await fetch(url)
         const data = await res.json()
-        startMovie(data)
-        if(data.totalResults < 11){
+        console.log(data)
+        startMovie(data)         
+        if(data.Search.length < 10){
             return page = 3
-        }
+        } 
+            
     }
     
     return getTotalResults
 }
 
 const startMovie = (data) => {
+    try{
         data.Search.forEach(element => {
             if(element.Poster === 'N/A'){
                 element.Poster = `./assets/img/no_image.png`
@@ -56,7 +59,14 @@ const startMovie = (data) => {
                     <p class="movie__year">Year:<span class="movie__year-value">${element.Year}</span></p>
                 </div>`
             movies.appendChild(item)
-        });
+        }); 
+    }   catch (e){
+            if(e instanceof TypeError){
+                alert('There is no any film. Page will be reload')
+                location.reload()
+            }
+    }
+       
 }
 
 
