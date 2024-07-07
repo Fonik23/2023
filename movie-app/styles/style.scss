@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.header {
+    height: 75px;
+    display: flex;
+    padding: 5px 15px;
+    justify-content: end;
+    background-color: orange;
+    align-items: center;
+    &__form {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        & > input {
+            display: inline-block;
+            height: 60%;
+            border-radius: 15px;
+            padding: 5px 10px ;
+            font-size: 20px;
+            margin-right: 10px;
+            border: none;
+            &::placeholder{
+                padding: 0 5px;
+                font-size: 1rem;
+                line-height: 40px; 
+            }
+            &::-webkit-search-cancel-button{
+                -webkit-appearance: none;
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+                background-image: url('../assets/svg/cross.svg');
+                background-position: center;
+                margin-right: 5px;   
+            }
+            &:focus{
+                outline: 5px solid rgb(140, 202, 252);
+            }
+            
+        }
+    }
+    &__btn{
+        display: inline-block;
+        height: 60%;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1);
+            transition: all .4s;
+        }
+        & > img{
+            height: 100%;
+        }
+    }
+  }
+
+main{
+    width: 100%;
+    flex: 1 0 auto;
+    background-color: black;
+}
+
+.movies {
+    width: 90%;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    &:last-child{
+        margin-bottom: 45px;
+    }
+}
+.movie {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border: 3px solid orange;
+    border-radius: 15px;
+    justify-self: center;
+    overflow: hidden;
+  &__poster {
+    margin-top: 1px;
+    height: 80%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  &__box{
+   height: 20%;
+   width: 100%;
+   text-align: center;
+   position: absolute;
+   bottom: 15px;
+   left: 0; 
+   padding: 5px 5px 10px 5px; 
+   background-color: rgba(0, 0, 0, 0.8);;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   color: white;
+   justify-content: space-between;
+  }
+  &__title {
+    padding: 0 3px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 18px;
+    text-overflow: ellipsis;
+  }
+  &__year {}
+  &__year-value {}
+  &__tag {}
+}
+
+
+  .footer {
+    height: 60px;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    &_content {
+        width: 100%;
+        display: flex;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__gh-link {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+    }
+    &__rsschool-link {
+        display: inline-block;
+        
+       & > img {
+        height: 20px;
+       }
+    }
+    &__year {
+        display: inline-block;
+    }
+  }
+  
