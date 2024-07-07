@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio-player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <audio src="./assets/audio/stan.mp3" class="audio"></audio>
+    <div class="background"></div>
+    <div class="player">
+        <div class="player__content">
+            <div class="player__volume">
+                <img src="./assets/svg/mute.svg" alt="minvol">
+                <input type="range" name="volume" class="player__vol-range" value="70" min="0" max="100" step="10">
+                <img src="./assets/svg/full.svg" alt="fullvol">
+            </div>
+            <div class="player__screen"></div>
+            <div class="player__progress progress">
+                <div class="progress__bar">
+                    <input type="range" name="bar" class="progress__range" value="0">
+                </div>
+                <div class="progress__time-box">
+                    <div class="progress__start-time"><span>0:00</span></div>
+                    <div class="progress__end-time"><span>3:15</span></div>
+                </div>
+            </div>
+            <div class="player__name">
+                <p class="player__art">Artist</p>
+                <p class="player__song">Name Song</p>
+            </div>
+            <div class="player__controls">
+                <div class="player__icon-arrow player-prev btn" >
+                </div>
+                <div class="player__icon-center btn">
+                    <img src="./assets/svg/play.svg" alt="play" class="player__play">
+                    <img src="./assets/svg/stop.svg" alt="pause" class="player__stop dn">
+                </div>
+                <div class="player__icon-arrow player-next btn">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__content">
+            <a href="https://github.com/Fonik23" class="footer__github" target="_blank">Fonik23</a>
+            <a href="https://rs.school/js-stage0/" class="footer__rschool" target="_blank"><img  class="footer__img" src="./assets/svg/rs_school_js.svg" alt="rs-school"></a>
+            <span class="footer__year">2023</span>
+        </div>
+    </footer>
+    <script src="./scripts/index.js" ></script>
+</body>
+</html>
